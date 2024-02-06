@@ -1,0 +1,7 @@
+steps:
+  # Step 1: Execute the Ansible playbook
+  - name: 'gcr.io/cloud-builders/ansible'
+    args:
+      - '-i'
+      - 'localhost,'
+      - 'sample.yml'
