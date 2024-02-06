@@ -1,6 +1,6 @@
 ---
 - name: Print Sentence
-  hosts: localhost    #sample
+  hosts: sample    #sample
   gather_facts: false
   connection: ssh
   become: true
