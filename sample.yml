@@ -1,0 +1,11 @@
+---
+- name: Print Sentence
+  hosts: localhost    #sample
+  gather_facts: false
+  connection: ssh
+  become: true
+
+  tasks:
+    - name: Print a Sentence
+      debug:
+        msg: "Hello, this is a simple Ansible playbook!"
