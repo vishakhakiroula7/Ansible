@@ -1,6 +1,6 @@
 steps:
   # Step 1: Execute the Ansible playbook
-  - name: 'gcr.io/cloud-builders/ansible'
+  - name: 'gcr.io/cloud-builders/ansible:2.9.27'
     args:
       - '-i'
       - 'localhost,'
