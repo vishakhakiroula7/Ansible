@@ -5,3 +5,7 @@ steps:
       - '-i'
       - 'localhost,'
       - 'sample.yml'
+    steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/my-project/my-image', '.']
+    logsBucket: 'gs://ansible_demo_bucket001/logfolder'
