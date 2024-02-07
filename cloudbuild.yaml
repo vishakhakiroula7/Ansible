@@ -12,7 +12,7 @@ steps:
   - name: 'gcr.io/cloud-builders/npm'
     args: ['run', 'build']
     # Add logsBucket here (optional)
-    logsBucket: 'gs://ansible_demo_bucket001/logfolder'  # Replace with your desired bucket
+    logsBucket: '/ansible_demo_bucket001/logfolder'  # Replace with your desired bucket
 
 options:
   default_logs_bucket_behavior: REGIONAL_USER_OWNED_BUCKET
