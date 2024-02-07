@@ -8,5 +8,6 @@ steps:
   # Step 2: Run npm build (assuming it's intended, adjust if not)
   - name: 'gcr.io/cloud-builders/npm'
     args: ['run', 'build']
-options:
-  default_logs_bucket_behavior: REGIONAL_USER_OWNED_BUCKET
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/my-project/my-image', '.']
+    logsBucket: 'gs://ansible_demo_bucket001/logfolder'
