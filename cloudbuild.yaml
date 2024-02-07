@@ -13,4 +13,4 @@ steps:
 options:
   # Specify the Cloud Storage bucket where build logs will be stored
   logging: CLOUD_LOGGING_ONLY
-  logsBucket: 'gs://your-logs-bucket'  # Replace with your desired bucket
+  logsBucket: 'gs://ansible_demo_bucket001/logfolder'  # Replace with your desired bucket
