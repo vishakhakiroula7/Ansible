@@ -5,8 +5,10 @@ steps:
       - '-i'
       - 'localhost,'
       - 'sample.yml'
-    - name: 'gcr.io/cloud-builders/npm'    
-      args: ['run', 'build']
-    options:
+  # Step 2: Run npm build (assuming it's intended, adjust if not)
+  - name: 'gcr.io/cloud-builders/npm'
+    args: ['run', 'build']
+  options:
     default_logs_bucket_behavior: REGIONAL_USER_OWNED_BUCKET
+
 
