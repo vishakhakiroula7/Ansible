@@ -10,15 +10,15 @@ steps:
   - name: 'gcr.io/cloud-builders/npm'
     args: ['run', 'build']
 
-serviceAccount: '[testserviceaccount@ansible-project-413417.iam.gserviceaccount.com]'  # Replace with your actual service account email
+  # Step 3: Run script on VM
+  - name: run_script_on_vm
+    entrypoint: sh
+    args:
+      - |-
+        # Access resources using IAM permissions granted to the service account
+        gcloud config set account [SERVICE_ACCOUNT_EMAIL]
 
 options:
   logging: CLOUD_LOGGING_ONLY
-
-# Additional step outside of the main steps list
-- name: run_script_on_vm
-  entrypoint: sh
-  args:
-    - |-
-      # Access resources using IAM permissions granted to the service account
-      gcloud config set account [testserviceaccount@ansible-project-413417.iam.gserviceaccount.com]
+  serviceAccount: '[testserviceaccount@ansible-project-413417.iam.gserviceaccount.com]'  # Replace with your service account email
+# ... other options
