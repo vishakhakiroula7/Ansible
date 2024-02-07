@@ -1,5 +1,5 @@
 steps:
-  - name: 'ansible:2.9.27'
+  - name: 'ansible:ansible-lint:latest'
     args:
       - '-i'
       - 'localhost,'
