@@ -5,6 +5,14 @@ steps:
       - '-i'
       - 'localhost,'
       - 'sample.yml'
+    # Add logsBucket here (optional)
+    logsBucket: 'gs://your-logs-bucket'  # Replace with your desired bucket
+
   # Step 2: Run npm build (assuming it's intended, adjust if not)
   - name: 'gcr.io/cloud-builders/npm'
     args: ['run', 'build']
+    # Add logsBucket here (optional)
+    logsBucket: 'gs://ansible_demo_bucket001/logfolder'  # Replace with your desired bucket
+
+options:
+  default_logs_bucket_behavior: REGIONAL_USER_OWNED_BUCKET
