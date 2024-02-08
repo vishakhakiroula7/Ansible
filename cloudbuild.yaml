@@ -1,7 +1,6 @@
 steps:
   - name: 'sushantmangaonkar22/6e66e9b62fc3:test1'
     args:
-      - '-i'
       - 'localhost,'
       - 'sample.yml'
 
