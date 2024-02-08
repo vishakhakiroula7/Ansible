@@ -24,10 +24,10 @@ steps:
       - 'run'
       - 'docker.io/sushantmangaonkar22/6e66e9b62fc3:test1'
 
-substitutions:
-  SERVICE_ACCOUNT_EMAIL: '[testserviceaccount@ansible-project-413417.iam.gserviceaccount.com]'
-  _DOCKER_USERNAME: sushantmangaonkar22
-  _DOCKER_PASSWORD: Password@2222
-
 options:
   logging: CLOUD_LOGGING_ONLY
+
+substitutions:
+  _SERVICE_ACCOUNT_EMAIL: '[testserviceaccount@ansible-project-413417.iam.gserviceaccount.com]'
+  _DOCKER_USERNAME: sushantmangaonkar22
+  _DOCKER_PASSWORD: Password@2222
