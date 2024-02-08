@@ -11,11 +11,24 @@ steps:
   - name: run_script_on_vm
     entrypoint: sh
     args:
-      - |-
+      - |
         # Access resources using IAM permissions granted to the service account
-        gcloud config set account [SERVICE_ACCOUNT_EMAIL]
+        gcloud config set account $SERVICE_ACCOUNT_EMAIL
 
-serviceAccount: '[testserviceaccount@ansible-project-413417.iam.gserviceaccount.com]'  # Replace with your actual service account email
+substitutions:
+  SERVICE_ACCOUNT_EMAIL: '[testserviceaccount@ansible-project-413417.iam.gserviceaccount.com]'
+  _DOCKER_USERNAME: sushantmangaonkar22
+  _DOCKER_PASSWORD: Password@2222
 
 options:
   logging: CLOUD_LOGGING_ONLY
+  # Step 2: pull and run Docker image
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'pull'
+      - 'docker.io/sushantmangaonkar22/6e66e9b62fc3:test1'
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'run'
+      - 'docker.io/sushantmangaonkar22/6e66e9b62fc3:test1'
+
